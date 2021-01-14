@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+table,td{
+    border: meduim solid;
+    border: 1px solid black;
+    width:50%; 
+    text-align: center;
+   
+}
+tr {
+  background-color: #D8BFD8;
+  color: black;
+}
+
+
+</style>
+
+<body bgcolor="#DB7093">
+    
+    
+    <a href="{% url 'deplacement:nouveau' %}">
+        Ajouter un nouveau deplacement
+    </a>
+    <h1><center>Tableau de bords</center> </h1>
+
+
+
+<center>    
+<table class="table" border="double" class=" > 
+    
+<tr border="double"  >   
+    
+    
+        <td bgcolor="#C0C0C0"> date </td>   
+        <td bgcolor="#C0C0C0"> num_mission </td>
+        <td bgcolor="#C0C0C0"> direction</td>
+        <td bgcolor="#C0C0C0">Heure_depart </td>
+        <td bgcolor="#C0C0C0"> compteur_depart </td>
+        <td bgcolor="#C0C0C0"> compteur_arriver </td>
+        <td bgcolor="#C0C0C0" > mission </td>
+        <td bgcolor="#C0C0C0"> Nom_chauffeur </td>
+        <td bgcolor="#C0C0C0"> Accompagnant </td>
+        <td bgcolor="#C0C0C0"> Materiels </td>
+        <td bgcolor="#C0C0C0"> Lieu_carburant </td>
+        <td bgcolor="#C0C0C0"> Quantite_carbu </td>
+        <td bgcolor="#C0C0C0"> Num </td>
+        <td bgcolor="#C0C0C0"> Heure_retour </td>
+        <td bgcolor="#C0C0C0">  validation </td>
+    
+</tr>
+
+    
+        
+            <ul>
+                {% for mini in minis %}
+                <tr>
+                <td> {{ mini.date }} </td>
+                <td>({{ mini.num_mission }})</td> 
+                <td> {{ mini.direction }} </td>
+                <td> {{ mini.Heure_depart }} </td>
+                <td> {{ mini.compteur_depart }} </td>
+                <td> {{ mini.compteur_arriver }} </td>
+                <td> {{ mini.mission }} </td>
+                <td> {{ mini.Nom_chauffeur }} </td>
+                <td> {{ mini.Accompagnant }} </td>
+                <td> {{ mini.Materiels }} </td>
+                <td> {{ mini.Lieu_carburant }} </td>
+                <td> {{ mini.Quantite_carbu }} </td>
+                <td> {{ mini.Num }} </td>
+                <td> {{ mini.Heure_retour }} </td>
+                <td> {{ mini.validation }} </td>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </li>
+                </tr>
+                
+                {% empty %}
+                <li>Il n'y en a pas actuellement.</li>
+                {% endfor %}
+            </ul>
+    </td>
+    
+
+</center>
+</table>
+</body>
+</html>
